@@ -33,8 +33,10 @@ exports.db = function (params,callback){
   }
 };
 $fh.db(options, function (err, data) {
+  callback(err, JSON.stringify(data));
   if (err) {
     console.error("Error " + err);
+    
   } else {
     console.log(JSON.stringify(data));
     /*
